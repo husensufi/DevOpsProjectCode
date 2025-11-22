@@ -14,6 +14,10 @@ spec:
       labels:
         app: go-web-app
     spec:
+      tolerations:
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Exists"
+        effect: "NoSchedule"
       containers:
       - name: go-web-app
         image: IMAGE_PLACEHOLDER
